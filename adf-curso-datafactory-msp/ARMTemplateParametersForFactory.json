@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-curso-datafactory-msp"
+		},
+		"ls_adls_accountKey": {
+			"value": ""
+		},
+		"ls_databricks_accessToken": {
+			"value": ""
+		},
+		"ls_sql_udemy_curso_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=server-udemy-curso-msp.database.windows.net;Initial Catalog=db-curso-udemy;User ID=marjukavic"
+		},
+		"ls_adls_properties_typeProperties_url": {
+			"value": "https://udemystoredatalake.dfs.core.windows.net/"
+		},
+		"ls_akv_properties_typeProperties_baseUrl": {
+			"value": "https://akv-curso-udemy-msp.vault.azure.net/"
+		},
+		"ls_databricks_properties_typeProperties_existingClusterId": {
+			"value": "1106-204334-a98287a0"
+		},
+		"ls_ftp_ibge_properties_typeProperties_host": {
+			"value": "ftp.ibge.gov.br/"
+		},
+		"trg_storage_event_properties_typeProperties_scope": {
+			"value": "/subscriptions/4a2108ca-48e3-4ddb-b55b-7fabc87c12d7/resourceGroups/rg-curso-udemy/providers/Microsoft.Storage/storageAccounts/udemystoredatalake"
+		}
+	}
+}
