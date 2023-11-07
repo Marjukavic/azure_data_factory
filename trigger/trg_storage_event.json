@@ -1,0 +1,25 @@
+{
+	"name": "trg_storage_event",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline_copy_sqldata_full",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/stage/blobs/events",
+			"blobPathEndsWith": "product.txt",
+			"ignoreEmptyBlobs": false,
+			"scope": "/subscriptions/4a2108ca-48e3-4ddb-b55b-7fabc87c12d7/resourceGroups/rg-curso-udemy/providers/Microsoft.Storage/storageAccounts/udemystoredatalake",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

@@ -1,0 +1,82 @@
+{
+	"name": "pipeline Variaveis",
+	"properties": {
+		"activities": [
+			{
+				"name": "setvar_dataatual",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "now",
+					"value": {
+						"value": "@utcnow('yyyy-MM-dd')",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "setvar_dynamic",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "dynamic_content",
+					"value": {
+						"value": "@string(contains(pipeline().parameters.p_dynamic,'abc'))",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "setvar_concatena",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "query",
+					"value": {
+						"value": "SELECT * FROM TABLE WHERE DATA_INICIO >= '@{pipeline().parameters.p_data}'",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"p_dynamic": {
+				"type": "string"
+			},
+			"p_data": {
+				"type": "string",
+				"defaultValue": "1900-01-01"
+			}
+		},
+		"variables": {
+			"now": {
+				"type": "String",
+				"defaultValue": "1900-01-01"
+			},
+			"dynamic_content": {
+				"type": "String"
+			},
+			"query": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-11-06T02:52:57Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

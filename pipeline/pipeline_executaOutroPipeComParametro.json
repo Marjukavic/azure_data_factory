@@ -1,0 +1,26 @@
+{
+	"name": "pipeline_executaOutroPipeComParametro",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "parameter",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"fileName": "Teste"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-11-06T02:56:15Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

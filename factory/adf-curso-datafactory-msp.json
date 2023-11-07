@@ -1,0 +1,9 @@
+{
+	"name": "adf-curso-datafactory-msp",
+	"location": "brazilsouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6c066af4-273d-469a-9d02-12f7463a4e10",
+		"tenantId": "d151990a-f599-45af-9039-886b5ab9f604"
+	}
+}
